@@ -116,7 +116,8 @@ def test_graph_skeleton():
     assert final["parsed_diff"] is not None
     assert final["metadata"] is not None
     assert final["final_review_markdown"] != ""
-    assert "No blocking issues found" in final["final_review_markdown"]
+    assert "Password verification bypassed" in final["final_review_markdown"]
+    assert final["merged_findings"]
 
     print()
     print("=== FINAL REVIEW ===\n")

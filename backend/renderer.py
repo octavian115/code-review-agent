@@ -40,14 +40,14 @@ def render_markdown(
     if metadata and not metadata.has_repo_path:
         lines.append(
             "> *Static analysis was not available — findings are based on "
-            "LLM analysis only.*"
+            "diff analysis only.*"
         )
         lines.append("")
     elif metadata and metadata.tools_failed:
         failed = ", ".join(metadata.tools_failed)
         lines.append(
             f"> *Some static analysis tools failed ({failed}) — related "
-            f"findings are based on LLM analysis only.*"
+            f"findings are based on diff analysis only.*"
         )
         lines.append("")
 

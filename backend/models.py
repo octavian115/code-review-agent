@@ -85,11 +85,12 @@ class ToolResult(BaseModel):
     """Output from a static analysis tool (ruff, bandit, etc.)."""
 
     tool: Literal["ruff", "bandit", "mypy", "pytest"]
-    file_path: str
+    file_path: str | None = None
     line_number: int | None = None
-    severity: Literal["low", "medium", "high", "critical"]
+    severity: Literal["low", "medium", "high", "critical"] | None = None
     message: str
     rule_id: str | None = None
+    raw_output: str | None = None
 
 
 # ── Finding Model ────────────────────────────────────────────────────────────
@@ -110,6 +111,7 @@ class Finding(BaseModel):
         "test_reviewer",
         "ruff",
         "bandit",
+        "supervisor",
     ]
     title: str
     description: str
