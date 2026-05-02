@@ -111,7 +111,6 @@ class Finding(BaseModel):
         "test_reviewer",
         "ruff",
         "bandit",
-        "supervisor",
     ]
     title: str
     description: str
